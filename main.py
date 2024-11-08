@@ -35,3 +35,11 @@ class Agenda:
             print("Contato editado com sucesso.")
         else:
             print("Índice inválido.")
+
+    def marcar_favorito(self, indice):
+        if 0 <= indice < len(self.contatos):
+            self.contatos[indice].favorito = not self.contatos[indice].favorito
+            estado = "marcado" if self.contatos[indice].favorito else "desmarcado"
+            print(f"Contato {estado} como favorito.")
+        else:
+            print("Índice inválido.")
