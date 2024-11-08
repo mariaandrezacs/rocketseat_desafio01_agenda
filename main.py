@@ -43,3 +43,11 @@ class Agenda:
             print(f"Contato {estado} como favorito.")
         else:
             print("Índice inválido.")
+
+        def listar_favoritos(self):
+            favoritos = [contato for contato in self.contatos if contato.favorito]
+            if not favoritos:
+                print("Nenhum contato favorito.")
+            else:
+                for contato in favoritos:
+                    print(contato)
