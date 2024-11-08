@@ -18,3 +18,10 @@ class Agenda:
         novo_contato = Contato(nome, telefone, email)
         self.contatos.append(novo_contato)
         print("Contato adicionado com sucesso!!!")
+
+    def listar_contatos(self):
+        if not self.contatos:
+            print("Nenhum contato cadastrado.")
+        else:
+            for i, contato in enumerate(self.contatos, 1):
+                print(f"{i}. {contato}")
