@@ -73,3 +73,33 @@ def menu():
         print("7. Sair")
 
         opcao = input("Digite a opção desejada: ")
+
+        if opcao == '1':
+            nome = input("Digite o nome: ")
+            telefone = input("Digite o telefone: ")
+            email = input("Digite o email: ")
+            agenda.adicionar_contato(nome, telefone, email)
+        elif opcao == '2':
+            agenda.listar_contatos()
+        elif opcao == '3':
+            indice = int(input("Digite o número do contato para editar: ")) - 1
+            nome = input("Novo nome (deixe vazio para manter): ")
+            telefone = input("Novo telefone (deixe vazio para manter): ")
+            email = input("Novo email (deixe vazio para manter): ")
+            agenda.editar_contato(indice, nome, telefone, email)
+        elif opcao == '4':
+            indice = int(input("Digite o número do contato para marcar/desmarcar como favorito: ")) - 1
+            agenda.marcar_favorito(indice)
+        elif opcao == '5':
+            agenda.listar_favoritos()
+        elif opcao == '6':
+            indice = int(input("Digite o número do contato para apagar: ")) - 1
+            agenda.deletar_contato(indice)
+        elif opcao == '7':
+            print("Saindo da aplicação. Até mais!")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+
+
+
