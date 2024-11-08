@@ -25,3 +25,13 @@ class Agenda:
         else:
             for i, contato in enumerate(self.contatos, 1):
                 print(f"{i}. {contato}")
+
+    def editar_contato(self, indice, nome=None, telefone=None, email=None):
+        if 0 <= indice < len(self.contatos):
+            contato = self.contatos[indice]
+            contato.nome = nome if nome else contato.nome
+            contato.telefone = telefone if telefone else contato.telefone
+            contato.email = email if email else contato.email
+            print("Contato editado com sucesso.")
+        else:
+            print("Índice inválido.")
