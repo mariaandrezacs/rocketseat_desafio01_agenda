@@ -58,3 +58,18 @@ class Agenda:
             print(f"Contato '{deletado.nome}' deletado com sucesso.")
         else:
             print("Índice inválido.")
+
+def menu():
+    agenda = Agenda()
+
+    while True:
+        print("\nEscolha uma opção:")
+        print("1. Adicionar contato")
+        print("2. Listar contatos")
+        print("3. Editar contato")
+        print("4. Marcar/Desmarcar como favorito")
+        print("5. Listar favoritos")
+        print("6. Apagar contato")
+        print("7. Sair")
+
+        opcao = input("Digite a opção desejada: ")
