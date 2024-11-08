@@ -44,10 +44,17 @@ class Agenda:
         else:
             print("Índice inválido.")
 
-        def listar_favoritos(self):
-            favoritos = [contato for contato in self.contatos if contato.favorito]
-            if not favoritos:
-                print("Nenhum contato favorito.")
-            else:
-                for contato in favoritos:
-                    print(contato)
+    def listar_favoritos(self):
+        favoritos = [contato for contato in self.contatos if contato.favorito]
+        if not favoritos:
+            print("Nenhum contato favorito.")
+        else:
+            for contato in favoritos:
+                print(contato)
+
+    def deletar_contato(self, indice):
+        if 0 <= indice < len(self.contatos):
+            deletado = self.contatos.pop(indice)
+            print(f"Contato '{deletado.nome}' deletado com sucesso.")
+        else:
+            print("Índice inválido.")
